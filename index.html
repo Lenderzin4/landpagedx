@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PowerNutri - Informações sobre suplementos nutricionais de alta qualidade para maximizar seu desempenho físico e resultados. Whey protein, creatina, BCAA e mais.">
+    <meta name="keywords" content="suplementos, whey protein, creatina, BCAA, nutrição esportiva, academia, fitness, informações">
+    <title>PowerNutri - Informações sobre Suplementos de Alta Performance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #1870b6;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #ffd700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1579758629938-03607ccdbaba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1870b6;
+        }
+        
+        .section-title p {
+            color: #777;
+            font-size: 18px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #1870b6;
+        }
+        
+        .feature-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .products {
+            padding: 80px 0;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .product-info p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+        }
+        
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .info-section {
+            padding: 80px 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1870b6;
+        }
+        
+        .info-card p {
+            margin-bottom: 15px;
+        }
+        
+        .info-card ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .info-card ul li {
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: #ffd700;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #1870b6;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Modal para Termos e Políticas */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            color: #333;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        
+        .modal h2 {
+            color: #1870b6;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .modal h3 {
+            margin: 20px 0 10px;
+            font-size: 20px;
+        }
+        
+        .modal p, .modal ul li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .modal ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .cookie-banner p {
+            margin: 0 20px 0 0;
+        }
+        
+        .cookie-banner .btn {
+            margin: 10px;
+            padding: 8px 20px;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .cookie-banner {
+                flex-direction: column;
+            }
+            
+            .cookie-banner p {
+                margin: 0 0 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Power<span>Nutri</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#info">Informações</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Conheça o Poder dos Suplementos de Qualidade</h1>
+            <p>Informações completas sobre suplementos nutricionais para maximizar seu desempenho e acelerar seus resultados.</p>
+            <a href="#info" class="btn">Saiba Mais</a>
+        </div>
+    </section>
+
+    <section class="features" id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que a PowerNutri?</h2>
+                <p>Compromisso com informação de qualidade e conteúdo educativo</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Informação Confiável</h3>
+                    <p>Todo nosso conteúdo é baseado em estudos científicos e revisado por especialistas em nutrição esportiva.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Foco na Qualidade</h3>
+                    <p>Explicamos a importância de ingredientes premium e como identificar suplementos de alta qualidade no mercado.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Conteúdo Especializado</h3>
+                    <p>Nosso conteúdo é desenvolvido com nutricionistas e profissionais de educação física para garantir precisão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="produtos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Principais Categorias de Suplementos</h2>
+                <p>Conheça os diferentes tipos de suplementos e seus benefícios</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1594498653385-d5172c532c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Whey Protein">
+                    </div>
+                    <div class="product-info">
+                        <h3>Whey Protein</h3>
+                        <p>Proteína de alta absorção que auxilia na recuperação muscular e ganho de massa magra.</p>
+                        <a href="#info-whey" class="btn">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1579722821273-0f6c1ddde163?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BCAA">
+                    </div>
+                    <div class="product-info">
+                        <h3>BCAAs</h3>
+                        <p>Aminoácidos essenciais para recuperação muscular e prevenção de catabolismo durante o treino.</p>
+                        <a href="#info-bcaa" class="btn">Mais Informações</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1586339392738-65847e399f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Creatina">
+                    </div>
+                    <div class="product-info">
+                        <h3>Creatina</h3>
+                        <p>Suplemento que aumenta a força e potência muscular, melhorando o desempenho em treinos intensos.</p>
+                        <a href="#info-creatina" class="btn">Mais Informações</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section" id="info">
+        <div class="container">
+            <div class="section-title">
+                <h2>Informações Nutricionais</h2>
+                <p>Entenda como os suplementos podem complementar sua alimentação</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card" id="info-whey">
+                    <h3>Whey Protein: O que você precisa saber</h3>
+                    <p>O Whey Protein é uma proteína derivada do soro do leite, considerada de alto valor biológico por conter todos os aminoácidos essenciais em proporções adequadas.</p>
+                    <p><strong>Benefícios principais:</strong></p>
+                    <ul>
+                        <li>Recuperação muscular acelerada após treinos</li>
+                        <li>Auxílio no ganho de massa muscular magra</li>
+                        <li>Melhora do perfil de aminoácidos no sangue</li>
+                        <li>Praticidade para atingir as necessidades proteicas diárias</li>
+                    </ul>
+                    <p>A quantidade ideal varia conforme o objetivo e peso corporal, mas geralmente recomenda-se entre 20-30g por porção, consumidas após o treino ou em momentos estratégicos do dia.</p>
+                </div>
+                <div class="info-card" id="info-bcaa">
+                    <h3>BCAAs: Aminoácidos de Cadeia Ramificada</h3>
+                    <p>Os BCAAs (leucina, isoleucina e valina) são aminoácidos essenciais que o corpo não produz naturalmente e precisam ser obtidos através da alimentação ou suplementação.</p>
+                    <p><strong>Funções no organismo:</strong></p>
+                    <ul>
+                        <li>Estímulo da síntese proteica muscular (principalmente pela leucina)</li>
+                        <li>Redução da fadiga durante exercícios prolongados</li>
+                        <li>Diminuição do catabolismo muscular em períodos de restrição calórica</li>
+                        <li>Melhora da recuperação muscular entre treinos</li>
+                    </ul>
+                    <p>A proporção mais estudada é 2:1:1 (leucina:isoleucina:valina), com dosagens típicas entre 5-10g por dia, divididas antes, durante ou após os treinos.</p>
+                </div>
+                <div class="info-card" id="info-creatina">
+                    <h3>Creatina: O suplemento mais estudado</h3>
+                    <p>A creatina é um composto naturalmente produzido pelo corpo e encontrado em alimentos como carnes vermelhas e peixes. É armazenada principalmente nos músculos como fosfocreatina.</p>
+                    <p><strong>Efeitos comprovados:</strong></p>
+                    <ul>
+                        <li>Aumento da força muscular e potência em exercícios de alta intensidade</li>
+                        <li>Melhora da capacidade de recuperação entre séries</li>
+                        <li>Aumento do volume celular muscular</li>
+                        <li>Melhora do desempenho cognitivo</li>
+                    </ul>
+                    <p>A dosagem padrão é de 3-5g por dia, podendo ser consumida em qualquer momento do dia. Não é necessário fazer ciclos ou pausas na suplementação para manter seus benefícios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experiências Compartilhadas</h2>
+                <p>Relatos de pessoas que utilizam suplementos em sua rotina</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Depois que comecei a me informar adequadamente sobre suplementação, consegui otimizar minha dieta e melhorar significativamente meus resultados na academia. As informações da PowerNutri foram essenciais nesse processo."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Silva">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Silva</h4>
+                            <p>Atleta Amador</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Como personal trainer, sempre recomendo que meus alunos busquem informações confiáveis sobre suplementação. O conteúdo educativo da PowerNutri tem sido uma excelente referência para todos."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Martins">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Martins</h4>
+                            <p>Personal Trainer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Entender a ciência por trás dos suplementos mudou completamente minha abordagem ao treinamento. Agora sei exatamente o que funciona e por quê, graças às informações detalhadas que encontrei aqui."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Rafael Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rafael Mendes</h4>
+                            <p>Atleta Amador</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Pronto para aprender mais sobre nutrição esportiva?</h2>
+            <p>Explore nosso conteúdo educativo e descubra como a suplementação adequada pode complementar sua alimentação e potencializar seus resultados.</p>
+            <a href="#info" class="btn">Explorar Conteúdo</a>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PowerNutri</h4>
+                    <p>Informações confiáveis sobre suplementação para auxiliar em seus objetivos de saúde e desempenho físico.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📱</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#info-whey">Proteínas</a></li>
+                        <li><a href="#info-bcaa">Aminoácidos</a></li>
+                        <li><a href="#info-creatina">Creatina</a></li>
+                        <li><a href="#">Vitaminas</a></li>
+                        <li><a href="#">Pré-treinos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre nós</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
+                        <li><a href="#" id="termos-link">Termos de uso</a></li>
+                        <li><a href="#" id="privacidade-link">Política de privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li>📞 (11) 99999-9999</li>
+                        <li>✉️ info@powernutri.com.br</li>
+                        <li>🏢 Av. Paulista, 1000 - São Paulo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PowerNutri - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Termos de Uso -->
+    <div id="termos-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-termos">&times;</span>
+            <h2>Termos de Uso</h2>
+            
+            <p>Última atualização: 16 de abril de 2023</p>
+            
+            <p>Bem-vindo à PowerNutri. Por favor, leia atentamente estes Termos de Uso antes de utilizar nosso site.</p>
+            
+            <h3>1. Aceitação dos Termos
